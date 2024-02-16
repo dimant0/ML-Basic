@@ -6,7 +6,7 @@
 
 
 def encrypt(string: str, key: int) -> str:
-    alfabet = 'abcdefghijklmnopqrstuvwxyz'
+    alfabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPRRSTUVWXYZ .,!'
     result = []
     for letter in string:
         index = alfabet.find(letter)
@@ -21,7 +21,7 @@ def encrypt(string: str, key: int) -> str:
 
 
 def decrypt(encrypted_string: str, key: int) -> str:
-    alfabet = 'abcdefghijklmnopqrstuvwxyz'
+    alfabet = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPRRSTUVWXYZ .,!'
     result = []
     for letter in encrypted_string:
         index = alfabet.find(letter)
@@ -36,7 +36,13 @@ print('dog -> ' + encrypt('dog', 3))
 print('grj -> ' + decrypt('grj', 3))
 print('')
 print('python -> ' + encrypt('python', 5))
-print('udymts -> ' + decrypt('udymts', 5))
+print('uDymts -> ' + decrypt('uDymts', 5))
 print('')
 print('test -> ' + encrypt('test', 30))
-print('xiwx -> ' + decrypt('xiwx', 30))
+print('XIWX -> ' + decrypt('XIWX', 30))
+print('')
+print('Test -> ' + encrypt('Test', 30))
+print('tIWX -> ' + decrypt('tIWX', 30))
+print('')
+print('This is just test. Just, simple test!-> ' + encrypt('This is just test. Just, simple test!', 30))
+print('tLMWAMWANYWXAXIWXBAjYWXCAWMRTPIAXIWXD -> ' + decrypt('tLMWAMWANYWXAXIWXBAjYWXCAWMRTPIAXIWXD', 30))

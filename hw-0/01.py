@@ -4,9 +4,9 @@
 #    1234567 -> 1 234 567, 267 -> 267, 34976 -> 34 976`
 
 
-def format_number(number: str) -> str:
+def format_number(number: int) -> str:
     result = []
-    number = list(number)
+    number = list(str(number))
     number.reverse()
 
     for i in range(len(number)):
@@ -18,5 +18,11 @@ def format_number(number: str) -> str:
     return ''.join(result)
 
 
+def format_number_2(number: int) -> str:
+    str = f'{number:,}'
+    str = str.replace(',',  ' ')
+    return str
+
 n = input('Enter number: ')
-print('Formatted number: ' + format_number(n))
+print('Formatted number: ' + format_number(int(n)))
+print('Formatted number (2nd variant): ' + format_number_2(int(n)))
